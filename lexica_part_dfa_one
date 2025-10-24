@@ -1,5 +1,5 @@
 #define TOKENS_RN         "("\
-                          "->"\
+                          ":="\
                           "|+"\
                           "|-"\
                           "|*"\
@@ -12,7 +12,7 @@
 
 #define KEYWORDS_RN__     "("\
                           ";"\
-                          "|->"\
+                          "|:="\
                           "|+"\
                           "|-"\
                           "|*"\
@@ -33,7 +33,7 @@
                           "|OUTPUT"\
                           "|IF"\
                           "|ELSE"\
-                          "|WHILE"\
+                          "|FOR-DOWN-TO-DO"\
                           "|DIV"\
                           "|MOD"\
                           "|LT"\
@@ -46,7 +46,7 @@
 
 #define KEYWORDS_RN_      "("\
                           ";"\
-                          "|->"\
+                          "|:="\
                           "|+"\
                           "|-"\
                           "|*"\
@@ -67,7 +67,7 @@
                           "|OUTPUT"\
                           "|IF"\
                           "|ELSE"\
-                          "|WHILE"\
+                          "|FOR-DOWN-TO-DO"\
                           "|DIV"\
                           "|MOD"\
                           "|LT"\
@@ -80,7 +80,7 @@
  
 #define KEYWORDS_RN       "("\
                           ";"\
-                          "|->"\
+                          "|:="\
                           "|+"\
                           "|-"\
                           "|*"\
@@ -99,9 +99,8 @@
                           "|END"\
                           "|INPUT"\
                           "|OUTPUT"\
-                          "|IF"\
                           "|ELSE"\
-                          "|WHILE"\
+                          "|FOR-DOWN-TO-DO"\
                           "|DIV"\
                           "|MOD"\
                           "|LT"\
@@ -126,7 +125,7 @@
 
 PROGRAM PG;
 
-BEGIN VAR INT_2 AA, BB, XX, YY;
+BEGIN VAR INT2 AA, BB, XX, YY;
 
 INPUT(AA);
 INPUT(BB);
@@ -137,8 +136,8 @@ OUTPUT(AA * BB);
 OUTPUT(AA DIV BB);
 OUTPUT(AA MOD BB);
 
- (AA - BB) * 10 + (AA + BB) DIV 10 -> XX;
- XX+XX MOD 10 -> YY;
+ (AA - BB) * 10 + (AA + BB) DIV 10 := XX;
+ XX+XX MOD 10 := YY;
 
 OUTPUT(XX);
 OUTPUT(YY);
