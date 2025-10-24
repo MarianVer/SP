@@ -1,0 +1,86 @@
+//1
+PROGRAM PG;
+VAR 
+    AA, BB, XX, YY: INT_2; // Змінено: синтаксис блоку VAR
+BEGIN
+    INPUT(AA);
+    INPUT(BB);
+
+    OUTPUT(AA + BB);
+    OUTPUT(AA - BB);
+    OUTPUT(AA * BB);
+    OUTPUT(AA DIV BB);
+    OUTPUT(AA MOD BB);
+
+    XX := (AA - BB) * 10 + (AA + BB) DIV 10; // Змінено: => на :=
+    YY := XX + XX MOD 10; // Змінено: => на :=
+
+    OUTPUT(XX);
+    OUTPUT(YY);
+END.
+
+//2
+
+PROGRAM PG;
+VAR 
+    AA, BB, CC, MX: INT_2;
+BEGIN
+    INPUT(AA);
+    INPUT(BB);
+    INPUT(CC);
+
+    // 1. Знаходження MX (мінімального)
+    // Змінено: синтаксис IF...THEN...ELSE та оператори
+    IF (AA < BB) AND (AA < CC) THEN // Змінено: LT на <, && на AND
+        MX := AA
+    ELSE IF (BB < AA) AND (BB < CC) THEN // Змінено: LT на <, && на AND
+        MX := BB
+    ELSE
+        MX := CC;
+
+    OUTPUT(MX);
+
+    // 2. Перевірка, чи всі рівні
+    // Переписано з виразу на оператор IF...THEN...ELSE
+    IF (AA = BB) AND (AA = CC) AND (BB = CC) THEN // Змінено: == на =, && на AND
+        OUTPUT(1)
+    ELSE
+        OUTPUT(0);
+
+    // 3. Перевірка, чи є хоча б одне додатне число
+    IF (AA > 0) OR (BB > 0) OR (CC > 0) THEN // Змінено: GT на >, || на OR
+        OUTPUT(-1)
+    ELSE
+        OUTPUT(0);
+
+    // 4. Перевірка нерівності
+    IF (AA < (BB + CC)) THEN // Змінено: LT на <
+        OUTPUT(10)
+    ELSE
+        OUTPUT(0);
+
+END.
+
+//3
+
+PROGRAM PG;
+VAR 
+    AA, BB, II, JJ, XX: INT_2;
+BEGIN
+    INPUT(AA);
+    INPUT(BB);
+
+    // Перший цикл REPEAT замінено на FOR...TO...DO
+    FOR II := AA TO BB DO
+        OUTPUT(II * II);
+
+    // Вкладені цикли REPEAT також замінено на FOR...TO...DO
+    XX := 0;
+    FOR II := 1 TO AA DO
+    BEGIN // BEGIN...END необхідний, бо тіло циклу - це інший цикл
+        FOR JJ := 1 TO BB DO
+            XX := XX + 1; // Змінено: => на :=
+    END;
+
+    OUTPUT(XX);
+END.
