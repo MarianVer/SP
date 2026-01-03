@@ -1,0 +1,23 @@
+PROGRAM _KC;
+VAR LONG INT _AA, _BB, _CA, _CB, _XV;
+BEGIN
+    SCAN(_AA);
+    SCAN(_BB);
+
+    ?? Оригінал рахував від A до B. FOR-DOWNTO рахує вниз. ??
+    ?? Щоб цикл спрацював, ми йдемо від B до A (у зворотному порядку) ??
+    
+    FOR _BB -> _CA DOWNTO _AA DO {
+        PRINT(_CA MUL _CA);
+    }
+
+    0 -> _XV;
+    
+    ?? Вкладений цикл. Рахуємо кількість ітерацій ??
+    FOR _AA -> _CA DOWNTO 1 DO {
+        FOR _BB -> _CB DOWNTO 1 DO {
+            (_XV ADD 1) -> _XV;
+        }
+    }
+    PRINT(_XV);
+END
