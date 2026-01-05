@@ -1,0 +1,24 @@
+PROGRAM _KC;
+VAR LONG INT _AA, _BB, _CA, _CB, _XV;
+BEGIN
+    SCAN(_AA)
+    SCAN(_BB)
+
+    _AA -> _CA
+    WHILE _CA < _BB {
+        PRINT(_CA MUL _CA)
+        (_CA ADD 1) -> _CA
+    }
+
+    0 -> _XV
+    1 -> _CA
+    WHILE _CA < _AA {
+        1 -> _CB
+        WHILE _CB < _BB {
+            (_XV ADD 1) -> _XV
+            (_CB ADD 1) -> _CB
+        }
+        (_CA ADD 1) -> _CA
+    }
+    PRINT(_XV)
+END
