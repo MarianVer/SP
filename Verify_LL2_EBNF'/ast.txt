@@ -1,0 +1,179 @@
+|--program
+    |--"PROGRAM"
+    |--program_name
+    |    |--ident
+    |    |    |--"_KC"
+    |--";"
+    |--"VAR"
+    |--declaration
+    |    |--value_type
+    |    |    |--"LONG"
+    |    |    |--"INT"
+    |    |--declaration_element
+    |    |    |--ident
+    |    |    |    |--"_AA"
+    |    |--other_declaration_ident
+    |    |    |--","
+    |    |    |--declaration_element
+    |    |    |    |--ident
+    |    |    |    |    |--"_BB"
+    |    |--other_declaration_ident
+    |    |    |--","
+    |    |    |--declaration_element
+    |    |    |    |--ident
+    |    |    |    |    |--"_CA"
+    |    |--other_declaration_ident
+    |    |    |--","
+    |    |    |--declaration_element
+    |    |    |    |--ident
+    |    |    |    |    |--"_CB"
+    |    |--other_declaration_ident
+    |    |    |--","
+    |    |    |--declaration_element
+    |    |    |    |--ident
+    |    |    |    |    |--"_XV"
+    |--";"
+    |--"BEGIN"
+    |--statement__iteration
+    |    |--statement
+    |    |    |--input
+    |    |    |    |--"SCAN"
+    |    |    |    |--"("
+    |    |    |    |--ident
+    |    |    |    |    |--"_AA"
+    |    |    |    |--")"
+    |    |--statement__iteration
+    |    |    |--statement
+    |    |    |    |--input
+    |    |    |    |    |--"SCAN"
+    |    |    |    |    |--"("
+    |    |    |    |    |--ident
+    |    |    |    |    |    |--"_BB"
+    |    |    |    |    |--")"
+    |    |    |--statement__iteration
+    |    |    |    |--statement
+    |    |    |    |    |--forto_cycle
+    |    |    |    |    |    |--"FOR"
+    |    |    |    |    |    |--cycle_counter_init
+    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |--"_BB"
+    |    |    |    |    |    |    |--"->"
+    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |--"_CA"
+    |    |    |    |    |    |--"DOWNTO"
+    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |--"_AA"
+    |    |    |    |    |    |--"DO"
+    |    |    |    |    |    |--block_statements
+    |    |    |    |    |    |    |--"{"
+    |    |    |    |    |    |    |--statement__iteration
+    |    |    |    |    |    |    |    |--statement
+    |    |    |    |    |    |    |    |    |--output
+    |    |    |    |    |    |    |    |    |    |--"PRINT"
+    |    |    |    |    |    |    |    |    |    |--"("
+    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |--"_CA"
+    |    |    |    |    |    |    |    |    |    |    |--binary_action
+    |    |    |    |    |    |    |    |    |    |    |    |--binary_operator
+    |    |    |    |    |    |    |    |    |    |    |    |    |--"MUL"
+    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"_CA"
+    |    |    |    |    |    |    |    |    |    |--")"
+    |    |    |    |    |    |    |--"}"
+    |    |    |    |--statement__iteration
+    |    |    |    |    |--statement
+    |    |    |    |    |    |--bind_left_to_right
+    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |--value
+    |    |    |    |    |    |    |    |    |    |--unsigned_value
+    |    |    |    |    |    |    |    |    |    |    |--"0"
+    |    |    |    |    |    |    |--"->"
+    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |--"_XV"
+    |    |    |    |    |--statement__iteration
+    |    |    |    |    |    |--statement
+    |    |    |    |    |    |    |--forto_cycle
+    |    |    |    |    |    |    |    |--"FOR"
+    |    |    |    |    |    |    |    |--cycle_counter_init
+    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |--"_AA"
+    |    |    |    |    |    |    |    |    |--"->"
+    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |--"_CA"
+    |    |    |    |    |    |    |    |--"DOWNTO"
+    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |--value
+    |    |    |    |    |    |    |    |    |    |    |--unsigned_value
+    |    |    |    |    |    |    |    |    |    |    |    |--"1"
+    |    |    |    |    |    |    |    |--"DO"
+    |    |    |    |    |    |    |    |--block_statements
+    |    |    |    |    |    |    |    |    |--"{"
+    |    |    |    |    |    |    |    |    |--statement__iteration
+    |    |    |    |    |    |    |    |    |    |--statement
+    |    |    |    |    |    |    |    |    |    |    |--forto_cycle
+    |    |    |    |    |    |    |    |    |    |    |    |--"FOR"
+    |    |    |    |    |    |    |    |    |    |    |    |--cycle_counter_init
+    |    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"_BB"
+    |    |    |    |    |    |    |    |    |    |    |    |    |--"->"
+    |    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"_CB"
+    |    |    |    |    |    |    |    |    |    |    |    |--"DOWNTO"
+    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |--value
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--unsigned_value
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"1"
+    |    |    |    |    |    |    |    |    |    |    |    |--"DO"
+    |    |    |    |    |    |    |    |    |    |    |    |--block_statements
+    |    |    |    |    |    |    |    |    |    |    |    |    |--"{"
+    |    |    |    |    |    |    |    |    |    |    |    |    |--statement__iteration
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |--statement
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--bind_left_to_right
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--group_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"("
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"_XV"
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--binary_action
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--binary_operator
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"ADD"
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--value
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--unsigned_value
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"1"
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--")"
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"->"
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |--"_XV"
+    |    |    |    |    |    |    |    |    |    |    |    |    |--"}"
+    |    |    |    |    |    |    |    |    |--"}"
+    |    |    |    |    |    |--statement__iteration
+    |    |    |    |    |    |    |--statement
+    |    |    |    |    |    |    |    |--output
+    |    |    |    |    |    |    |    |    |--"PRINT"
+    |    |    |    |    |    |    |    |    |--"("
+    |    |    |    |    |    |    |    |    |--expression
+    |    |    |    |    |    |    |    |    |    |--left_expression
+    |    |    |    |    |    |    |    |    |    |    |--ident
+    |    |    |    |    |    |    |    |    |    |    |    |--"_XV"
+    |    |    |    |    |    |    |    |    |--")"
+    |--"END"
