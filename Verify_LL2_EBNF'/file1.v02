@@ -1,0 +1,18 @@
+PROGRAM _KA;
+VAR LONG INT _AA, _BB, _XX, _YY;
+BEGIN
+    SCAN(_AA)
+    SCAN(_BB)
+
+    PRINT(_AA ADD _BB)
+    PRINT(_AA SUB _BB)
+    PRINT(_AA MUL _BB)
+    PRINT(_AA DIV _BB)
+    PRINT(_AA MOD _BB)
+
+    (_AA SUB _BB) MUL 10 ADD (_AA ADD _BB) DIV 10 -> _XX
+    _XX ADD _XX MOD 10 -> _YY
+
+    PRINT(_XX)
+    PRINT(_YY)
+END
