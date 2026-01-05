@@ -1,0 +1,34 @@
+PROGRAM _KB;
+VAR LONG INT _AA, _BB, _CC, _MM;
+BEGIN
+    SCAN(_AA)
+    SCAN(_BB)
+    SCAN(_CC)
+
+    IF _AA > _BB AND _AA > _CC {
+        _AA -> _MM
+    } ELSE IF _BB > _AA AND _BB > _CC {
+        _BB -> _MM
+    } ELSE {
+        _CC -> _MM
+    }
+    PRINT(_MM)
+
+    IF (_AA EQ _BB) AND (_AA EQ _CC) AND (_BB EQ _CC) {
+        PRINT(1)
+    } ELSE {
+        PRINT(0)
+    }
+
+    IF NOT (_AA > 0) OR NOT (_BB > 0) OR NOT (_CC > 0) {
+        PRINT(-1)
+    } ELSE {
+        PRINT(0)
+    }
+
+    IF _AA > (_BB ADD _CC) {
+        PRINT(10)
+    } ELSE {
+        PRINT(0)
+    }
+END
