@@ -1,0 +1,172 @@
+digraph FSM_Keywords {
+    rankdir=LR;
+    node [shape=circle];
+    
+    start [shape=point];
+    start -> q0;
+
+    /* Фінальний стан для завершених токенів */
+    node [shape=doublecircle];
+    q_final;
+    q_DO; /* DO є префіксом DOWNTO, але також є самостійним токеном */
+
+    node [shape=circle];
+
+    /* --- Символи розділювачі та оператори (1 символ) --- */
+    /* <, >, (, ), {, }, [, ], ,, ; */
+    q0 -> q_final [label="'<', '>', '(', ')', '{', '}', '[', ']', ',', ';'"];
+
+    /* --- Стрілка -> --- */
+    q0 -> q_arrow [label="'-'"];
+    q_arrow -> q_final [label="'>'"];
+
+    /* --- Ключові слова на A --- */
+    /* ADD, AND */
+    q0 -> q_A [label="'A'"];
+    q_A -> q_AD [label="'D'"];
+    q_AD -> q_final [label="'D'"]; /* ADD */
+    q_A -> q_AN [label="'N'"];
+    q_AN -> q_final [label="'D'"]; /* AND */
+
+    /* --- Ключові слова на B --- */
+    /* BEGIN */
+    q0 -> q_B [label="'B'"];
+    q_B -> q_BE [label="'E'"];
+    q_BE -> q_BEG [label="'G'"];
+    q_BEG -> q_BEGI [label="'I'"];
+    q_BEGI -> q_final [label="'N'"]; /* BEGIN */
+
+    /* --- Ключові слова на C --- */
+    /* CONTINUE */
+    q0 -> q_C [label="'C'"];
+    q_C -> q_CO [label="'O'"];
+    q_CO -> q_CON [label="'N'"];
+    q_CON -> q_CONT [label="'T'"];
+    q_CONT -> q_CONTI [label="'I'"];
+    q_CONTI -> q_CONTIN [label="'N'"];
+    q_CONTIN -> q_CONTINU [label="'U'"];
+    q_CONTINU -> q_final [label="'E'"]; /* CONTINUE */
+
+    /* --- Ключові слова на D --- */
+    /* DIV, DO, DOWNTO */
+    q0 -> q_D [label="'D'"];
+    q_D -> q_DI [label="'I'"];
+    q_DI -> q_final [label="'V'"]; /* DIV */
+    q_D -> q_DO [label="'O'"]; /* DO (Final) */
+    q_DO -> q_DOW [label="'W'"];
+    q_DOW -> q_DOWN [label="'N'"];
+    q_DOWN -> q_DOWNT [label="'T'"];
+    q_DOWNT -> q_final [label="'O'"]; /* DOWNTO */
+
+    /* --- Ключові слова на E --- */
+    /* ELSE, END, EQ, EXIT */
+    q0 -> q_E [label="'E'"];
+    q_E -> q_EL [label="'L'"];
+    q_EL -> q_final [label="'S'"]; /* ELS... -> ELSE correction: missed E */
+    q_EL -> q_ELSE [label="'S'"];
+    q_ELSE -> q_final [label="'E'"]; /* ELSE */
+    
+    q_E -> q_EN [label="'N'"];
+    q_EN -> q_final [label="'D'"]; /* END */
+    
+    q_E -> q_final [label="'Q'"]; /* EQ */
+    
+    q_E -> q_EX [label="'X'"];
+    q_EX -> q_EXI [label="'I'"];
+    q_EXI -> q_final [label="'T'"]; /* EXIT */
+
+    /* --- Ключові слова на F --- */
+    /* FOR */
+    q0 -> q_F [label="'F'"];
+    q_F -> q_FO [label="'O'"];
+    q_FO -> q_final [label="'R'"]; /* FOR */
+
+    /* --- Ключові слова на I --- */
+    /* IF, INT */
+    q0 -> q_I [label="'I'"];
+    q_I -> q_final [label="'F'"]; /* IF */
+    q_I -> q_IN [label="'N'"];
+    q_IN -> q_final [label="'T'"]; /* INT */
+
+    /* --- Ключові слова на L --- */
+    /* LONG */
+    q0 -> q_L [label="'L'"];
+    q_L -> q_LO [label="'O'"];
+    q_LO -> q_LON [label="'N'"];
+    q_LON -> q_final [label="'G'"]; /* LONG */
+
+    /* --- Ключові слова на M --- */
+    /* MOD, MUL */
+    q0 -> q_M [label="'M'"];
+    q_M -> q_MO [label="'O'"];
+    q_MO -> q_final [label="'D'"]; /* MOD */
+    q_M -> q_MU [label="'U'"];
+    q_MU -> q_final [label="'L'"]; /* MUL */
+
+    /* --- Ключові слова на N --- */
+    /* NE, NOT */
+    q0 -> q_N [label="'N'"];
+    q_N -> q_final [label="'E'"]; /* NE */
+    q_N -> q_NO [label="'O'"];
+    q_NO -> q_final [label="'T'"]; /* NOT */
+
+    /* --- Ключові слова на O --- */
+    /* OR */
+    q0 -> q_O [label="'O'"];
+    q_O -> q_final [label="'R'"]; /* OR */
+
+    /* --- Ключові слова на P --- */
+    /* PRINT, PROGRAM */
+    q0 -> q_P [label="'P'"];
+    q_P -> q_PR [label="'R'"];
+    q_PR -> q_PRI [label="'I'"];
+    q_PRI -> q_PRIN [label="'N'"];
+    q_PRIN -> q_final [label="'T'"]; /* PRINT */
+    
+    q_PR -> q_PRO [label="'O'"];
+    q_PRO -> q_PROG [label="'G'"];
+    q_PROG -> q_PROGR [label="'R'"];
+    q_PROGR -> q_PROGRA [label="'A'"];
+    q_PROGRA -> q_final [label="'M'"]; /* PROGRAM */
+
+    /* --- Ключові слова на R --- */
+    /* REPEAT */
+    q0 -> q_R [label="'R'"];
+    q_R -> q_RE [label="'E'"];
+    q_RE -> q_REP [label="'P'"];
+    q_REP -> q_REPE [label="'E'"];
+    q_REPE -> q_REPEA [label="'A'"];
+    q_REPEA -> q_final [label="'T'"]; /* REPEAT */
+
+    /* --- Ключові слова на S --- */
+    /* SCAN, SUB */
+    q0 -> q_S [label="'S'"];
+    q_S -> q_SC [label="'C'"];
+    q_SC -> q_SCA [label="'A'"];
+    q_SCA -> q_final [label="'N'"]; /* SCAN */
+    
+    q_S -> q_SU [label="'U'"];
+    q_SU -> q_final [label="'B'"]; /* SUB */
+
+    /* --- Ключові слова на U --- */
+    /* UNTIL */
+    q0 -> q_U [label="'U'"];
+    q_U -> q_UN [label="'N'"];
+    q_UN -> q_UNT [label="'T'"];
+    q_UNT -> q_UNTI [label="'I'"];
+    q_UNTI -> q_final [label="'L'"]; /* UNTIL */
+
+    /* --- Ключові слова на V --- */
+    /* VAR */
+    q0 -> q_V [label="'V'"];
+    q_V -> q_VA [label="'A'"];
+    q_VA -> q_final [label="'R'"]; /* VAR */
+
+    /* --- Ключові слова на W --- */
+    /* WHILE */
+    q0 -> q_W [label="'W'"];
+    q_W -> q_WH [label="'H'"];
+    q_WH -> q_WHI [label="'I'"];
+    q_WHI -> q_WHIL [label="'L'"];
+    q_WHIL -> q_final [label="'E'"]; /* WHILE */
+}
