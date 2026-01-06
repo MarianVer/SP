@@ -1,9 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-/************************************************************
-* N.Kozak // Lviv'2024-2025 // lexica__2025                 *
-* file: syntax_one.cpp              *
-* ADAPTED FOR VARIANT 2 (Vereshchak)      *
-*************************************************************/
 
 #define ARRAY_INTERVAL 128
 
